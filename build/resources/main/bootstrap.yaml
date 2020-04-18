@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: aggregatorservice
+  cloud:
+    config:
+      uri: http://127.0.0.1:8696/config-server/config-server
+      name: ${spring.application.name},common,feign-${spring.application.name}
+      fail-fast: true
+eureka:
+  client:
+    fetchRegistry: true
